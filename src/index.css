@@ -1,3 +1,5 @@
+/* index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,10 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
-  * {
-    @apply transition-all duration-200;
-  }
-
   html {
     @apply scroll-smooth antialiased;
   }
@@ -27,35 +25,47 @@
     @apply font-semibold text-text-light dark:text-white tracking-tight;
   }
 
-  p {
-    @apply leading-relaxed;
+  p { @apply leading-relaxed; }
+
+  /* 이동 감소 선호: 전역 애니메이션 최소화 */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
 @layer components {
-  /* Discord-style buttons */
+  /* Buttons */
   .btn-brand {
     @apply px-4 py-2.5 bg-brand hover:bg-brand-hover text-white font-medium rounded-discord
-           transition-all duration-150 transform active:scale-[0.98] shadow-discord hover:shadow-discord-lg;
+           transform active:scale-[0.98] shadow-discord hover:shadow-discord-lg
+           transition-transform duration-150;
   }
 
   .btn-secondary {
     @apply px-4 py-2.5 bg-surface-light-300 dark:bg-surface-dark-100 
            text-text-light dark:text-text-primary font-medium rounded-discord
            hover:bg-surface-light-400 dark:hover:bg-surface-dark-200
-           transition-all duration-150 transform active:scale-[0.98];
+           transform active:scale-[0.98]
+           transition-colors duration-150;
   }
 
   .btn-ghost {
     @apply px-4 py-2.5 text-text-light dark:text-text-secondary 
            hover:bg-surface-light-300 dark:hover:bg-surface-dark-100
-           font-medium rounded-discord transition-all duration-150;
+           font-medium rounded-discord
+           transition-colors duration-150;
   }
 
-  /* Discord-style cards */
+  /* Cards */
   .card-discord {
     @apply bg-surface-light-100 dark:bg-surface-dark-300 rounded-lg 
-           shadow-discord hover:shadow-discord-lg transition-shadow duration-200;
+           shadow-discord hover:shadow-discord-lg
+           transition-shadow duration-200;
   }
 
   .card-elevated {
@@ -63,65 +73,38 @@
            shadow-discord-lg border border-surface-light-300 dark:border-surface-dark-100;
   }
 
-  /* Discord-style inputs */
+  /* Inputs */
   .input-discord {
     @apply px-3 py-2 bg-surface-light-300 dark:bg-surface-dark-600 
            text-text-light dark:text-text-primary rounded-discord
            border border-surface-light-400 dark:border-surface-dark-400
            focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20
-           transition-all duration-150;
+           transition-colors duration-150;
   }
 
-  /* Section styles */
-  .section-padding {
-    @apply py-20 px-6;
-  }
+  /* Sections */
+  .section-padding { @apply py-20 px-6; }
 
-  /* Text styles */
-  .text-label {
-    @apply text-xs font-semibold uppercase tracking-wide text-text-muted;
-  }
-
-  .text-heading {
-    @apply text-3xl md:text-4xl font-bold text-text-light dark:text-white;
-  }
-
-  .text-body {
-    @apply text-base text-text-light dark:text-text-secondary;
-  }
+  /* Text helpers */
+  .text-label   { @apply text-xs font-semibold uppercase tracking-wide text-text-muted; }
+  .text-heading { @apply text-3xl md:text-4xl font-bold text-text-light dark:text-white; }
+  .text-body    { @apply text-base text-text-light dark:text-text-secondary; }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 
-  .gradient-brand {
-    @apply bg-gradient-to-r from-brand to-brand-light;
-  }
+  .gradient-brand { @apply bg-gradient-to-r from-brand to-brand-light; }
+  .gradient-text  { @apply bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent; }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent;
-  }
-
-  .hover-lift {
-    @apply hover:-translate-y-0.5 transition-transform duration-200;
-  }
+  .hover-lift { @apply hover:-translate-y-0.5 transition-transform duration-200; }
 
   .discord-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: theme('colors.surface.dark.100') transparent;
   }
-
-  .discord-scrollbar::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  .discord-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
+  .discord-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
+  .discord-scrollbar::-webkit-scrollbar-track { background: transparent; }
   .discord-scrollbar::-webkit-scrollbar-thumb {
     background-color: theme('colors.surface.dark.100');
     border-radius: 4px;
