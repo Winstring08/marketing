@@ -4,6 +4,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SecurityPolygonScene from './components/SecurityPolygon';
+import Demo from './Demo';
 
 const Home = lazy(() => import('./pages/Home'));
 const Security = lazy(() => import('./pages/Security'));
@@ -29,6 +30,7 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/demo" element={<Demo />} />
                 <Route path="/security" element={<Security />} />
                 <Route path="/product" element={<Product />} />
                 <Route path="/download" element={<Download />} />

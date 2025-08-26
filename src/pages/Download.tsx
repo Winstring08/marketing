@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  DownloadIcon, CheckIcon, DeviceIcon, CloudIcon, 
+import { Link } from "react-router-dom";
+import {
+  DownloadIcon, CheckIcon, DeviceIcon, CloudIcon,
   WindowsIcon, AppleIcon, LinuxIcon, AndroidIcon,
-  ShieldIcon, DatabaseIcon, RocketIcon, CrownIcon
+  ShieldIcon, DatabaseIcon, RocketIcon, CrownIcon,
+  FlashIcon
 } from '../components/Icons';
 
 interface Platform {
@@ -107,7 +109,7 @@ const Download: React.FC = () => {
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10" />
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center">
             <motion.div
@@ -119,11 +121,17 @@ const Download: React.FC = () => {
               <DownloadIcon size={40} className="text-brand" />
             </motion.div>
             <h1 className="text-5xl font-black mb-4 text-text-light dark:text-white">
-              다운로드
+              CompassKey 다운로드
             </h1>
             <p className="text-xl text-text-light dark:text-text-secondary max-w-3xl mx-auto leading-relaxed">
               모든 플랫폼에서 Compass Security를 경험하세요
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/download" className="btn-brand inline-flex items-center justify-center px-8 py-4 text-lg my-6">
+                <WindowsIcon size={32} className="mr-2" />
+                Windows용 다운로드
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -146,11 +154,10 @@ const Download: React.FC = () => {
                   onClick={() => setSelectedPlatform(key)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`relative p-6 rounded-discord transition-all duration-150 ${
-                    selectedPlatform === key
-                      ? 'bg-brand text-white shadow-discord-lg'
-                      : 'card-discord hover:bg-surface-light-300 dark:hover:bg-surface-dark-400'
-                  }`}
+                  className={`relative p-6 rounded-discord transition-all duration-150 ${selectedPlatform === key
+                    ? 'bg-brand text-white shadow-discord-lg'
+                    : 'card-discord hover:bg-surface-light-300 dark:hover:bg-surface-dark-400'
+                    }`}
                 >
                   {platform.recommended && (
                     <span className="absolute -top-2 -right-2 bg-status-success text-white text-xxs font-bold uppercase tracking-wider px-2 py-1 rounded-full">
@@ -212,7 +219,7 @@ const Download: React.FC = () => {
                     <CrownIcon size={20} className="text-brand flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-text-light dark:text-text-secondary">
-                        <strong className="text-brand">무료 체험:</strong> 설치 후 14일 무료 체험을 시작할 수 있습니다. 
+                        <strong className="text-brand">무료 체험:</strong> 설치 후 14일 무료 체험을 시작할 수 있습니다.
                         신용카드 정보는 필요하지 않습니다.
                       </p>
                     </div>
@@ -264,14 +271,13 @@ const Download: React.FC = () => {
                   </div>
                   <div className="space-y-2">
                     {browsers.map((browser) => (
-                      <a 
+                      <a
                         key={browser.name}
-                        href="#" 
-                        className={`flex items-center justify-between p-3 rounded-discord transition-all duration-150 ${
-                          browser.available 
-                            ? 'bg-surface-light-300 dark:bg-surface-dark-100 hover:bg-brand/10 dark:hover:bg-brand/20 cursor-pointer' 
-                            : 'bg-surface-light-300/50 dark:bg-surface-dark-100/50 opacity-50 cursor-not-allowed'
-                        }`}
+                        href="#"
+                        className={`flex items-center justify-between p-3 rounded-discord transition-all duration-150 ${browser.available
+                          ? 'bg-surface-light-300 dark:bg-surface-dark-100 hover:bg-brand/10 dark:hover:bg-brand/20 cursor-pointer'
+                          : 'bg-surface-light-300/50 dark:bg-surface-dark-100/50 opacity-50 cursor-not-allowed'
+                          }`}
                       >
                         <span className="text-sm font-medium text-text-light dark:text-text-primary">
                           {browser.name}

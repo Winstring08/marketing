@@ -34,9 +34,8 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="p-2 rounded-lg bg-brand/10 dark:bg-brand/20 group-hover:bg-brand/20 dark:group-hover:bg-brand/30 transition-colors">
-              <ShieldIcon size={24} className="text-brand" />
-            </div>
+              <img src="/compasskey.png" alt="Logo" className="w-16 h-16" />
+
             <span className="text-lg font-bold text-text-light dark:text-white">
               Compass Security
             </span>
