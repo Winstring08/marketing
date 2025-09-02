@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldIcon, LockIcon, KeyIcon, CloudIcon } from './Icons';
+import { ShieldIcon, LockIcon, KeyIcon, CloudIcon } from '../Icons';
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               <div className="p-2 rounded-lg bg-brand/10 dark:bg-brand/20">
                 <ShieldIcon size={24} className="text-brand" />
               </div>
-              <span className="text-lg font-bold text-text-light dark:text-white">Compass Security</span>
+              <span className="text-lg font-bold text-text-light dark:text-white">Compass</span>
             </div>
             <p className="text-sm text-text-light dark:text-text-secondary leading-relaxed">
               엔터프라이즈급 보안 솔루션으로 안전한 디지털 환경을 구축하세요.
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
         <div className="mt-12 pt-8 border-t border-surface-light-300 dark:border-surface-dark-100">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-xs text-text-muted">
-              © 2024 Compass Security. All rights reserved.
+              © 2024 Compass. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link to="/privacy" className="text-xs text-text-muted hover:text-brand transition-colors">

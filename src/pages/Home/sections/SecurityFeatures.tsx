@@ -1,4 +1,4 @@
-import { ServerIcon, CloudIcon, DatabaseIcon, LockIcon, ShieldIcon, CheckIcon } from "./Icons";
+import { ServerIcon, CloudIcon, DatabaseIcon, LockIcon, ShieldIcon, CheckIcon } from "../../../components/Icons";
 
 const SecurityFeatures: React.FC = () => {
       return (

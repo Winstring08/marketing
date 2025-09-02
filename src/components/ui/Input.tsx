@@ -1,4 +1,4 @@
-import { input } from "../styles/input";
+import { input } from "../../styles/recipes/input";
 import clsx from "clsx";
 import type { InputHTMLAttributes } from "react";
 

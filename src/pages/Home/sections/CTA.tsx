@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CrownIcon, FlashIcon } from "./Icons";
+import { CrownIcon, FlashIcon } from "../../../components/Icons";
 
 const CTA: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const CTA: React.FC = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4 text-text-light dark:text-white">지금 바로 시작하세요</h2>
             <p className="text-lg text-text-light dark:text-text-secondary mb-8 max-w-2xl mx-auto">
-              14일 무료 체험으로 Compass Security의 모든 기능을 경험해보세요.
+              14일 무료 체험으로 Compass의 모든 기능을 경험해보세요.
               신용카드 없이 바로 시작할 수 있습니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

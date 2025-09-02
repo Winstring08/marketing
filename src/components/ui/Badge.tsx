@@ -1,4 +1,4 @@
-import { badge } from "../styles/badge";
+import { badge } from "../../styles/recipes/badge";
 import clsx from "clsx";
 
 type BadgeProps = {

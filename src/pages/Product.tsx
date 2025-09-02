@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/layout/Sidebar';
 import { 
   KeyIcon, DeviceIcon, ShareIcon, CheckIcon, RocketIcon, 
   WindowsIcon, AppleIcon, LinuxIcon, AndroidIcon, CloudIcon,
@@ -121,7 +121,7 @@ const Product: React.FC = () => {
   ];
 
   return (
-    <div ref={pageRef} className="min-h-screen pt-20 bg-surface-light-200 dark:bg-surface-dark-500 discord-scrollbar">
+    <div ref={pageRef} className="min-h-screen pt-16 bg-surface-light-200 dark:bg-surface-dark-500 discord-scrollbar">
       {/* Hero Section */}
       <section className="product-hero py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10" />
@@ -140,7 +140,7 @@ const Product: React.FC = () => {
               제품 기능
             </h1>
             <p className="text-xl text-text-light dark:text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Compass Security의 강력한 기능으로 비밀번호 관리를 혁신하세요
+              Compass의 강력한 기능으로 비밀번호 관리를 혁신하세요
             </p>
           </div>
         </div>

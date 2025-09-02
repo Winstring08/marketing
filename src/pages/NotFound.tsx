@@ -30,7 +30,7 @@ const NotFound: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
+    <div ref={containerRef} className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 pt-16">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div

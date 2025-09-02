@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../contexts/ThemeContext';
-import { ShieldIcon, SunIcon, MoonIcon, MenuIcon, CloseIcon } from './Icons';
+import { useTheme } from '../../contexts/ThemeContext';
+import { ShieldIcon, SunIcon, MoonIcon, MenuIcon, CloseIcon } from '../Icons';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
@@ -29,15 +29,15 @@ const Navbar: React.FC = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-200 ${
       isScrolled 
         ? 'bg-surface-light-200 dark:bg-surface-dark-300 shadow-discord-lg' 
-        : 'bg-surface-light-200/95 dark:bg-surface-dark-300/95 backdrop-blur-md'
+        : 'bg-surface-light-200/50 dark:bg-surface-dark-300/95 backdrop-blur-md'
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3 group">
-              <img src="/compasskey.png" alt="Logo" className="w-16 h-16" />
+              <img src="/compass.png" alt="Logo" className="w-16 h-16" />
 
             <span className="text-lg font-bold text-text-light dark:text-white">
-              Compass Security
+              Compass
             </span>
           </Link>
 

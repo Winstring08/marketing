@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { motion, type Variants } from "framer-motion";
-import { KeyIcon, DeviceIcon, ShareIcon } from "../components/Icons";
+import { KeyIcon, DeviceIcon, ShareIcon } from "../../../components/Icons";
 
 type Feature = { icon: React.ReactNode; title: string; description: string; badge: string };
 

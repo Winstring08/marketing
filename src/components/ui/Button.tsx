@@ -1,4 +1,4 @@
-import { button } from "../styles/button";
+import { button } from "../../styles/recipes/button";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 import type { ButtonHTMLAttributes, ReactNode } from "react";

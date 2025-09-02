@@ -1,8 +1,8 @@
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
-import { SparklesIcon, RocketIcon, ShieldIcon } from "../components/Icons";
-import SecurityPolygonScene from "./SecurityPolygon";
+import { SparklesIcon, RocketIcon, ShieldIcon } from "../../../components/Icons";
+import SecurityPolygonScene from "../components/SecurityPolygon";
 
 // 부모는 순서만 조절
 const heroParent: Variants = {
@@ -54,12 +54,12 @@ const Hero: React.FC = () => {
           </motion.h1>
 
           <motion.p variants={heroItem} className="hero-text text-xl text-text-light dark:text-text-secondary max-w-3xl mx-auto leading-relaxed transform-gpu mt-6">
-            Compass Security는 최첨단 암호화 기술과 직관적인 인터페이스로<br />
+            Compass는 최첨단 암호화 기술과 직관적인 인터페이스로<br />
             디지털 자산을 안전하게 보호합니다
           </motion.p>
 
           <motion.div variants={heroItem} className="hero-text flex flex-col sm:flex-row gap-4 justify-center pt-6 transform-gpu">
-            <Link to="/product" className="btn-brand inline-flex items-center justify-center px-8 py-4 text-lg">
+            <Link to="/download" className="btn-brand inline-flex items-center justify-center px-8 py-4 text-lg">
               <RocketIcon size={20} className="mr-2" /> 무료로 시작하기
             </Link>
             <Link to="/security" className="btn-secondary inline-flex items-center justify-center px-8 py-4 text-lg">

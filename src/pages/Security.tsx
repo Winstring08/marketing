@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/layout/Sidebar';
 import { ShieldIcon, LockIcon, KeyIcon, CloudIcon, CheckIcon, DatabaseIcon, ServerIcon, FlashIcon } from '../components/Icons';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -83,7 +83,7 @@ const Security: React.FC = () => {
   ];
 
   return (
-    <div ref={pageRef} className="min-h-screen pt-20 bg-surface-light-200 dark:bg-surface-dark-500 discord-scrollbar">
+    <div ref={pageRef} className="min-h-screen pt-16 bg-surface-light-200 dark:bg-surface-dark-500 discord-scrollbar">
       {/* Hero Section */}
       <section className="security-hero py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10" />

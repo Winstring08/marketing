@@ -1,9 +1,5 @@
 import { tv } from "tailwind-variants";
 
-/**
- * Button 스타일 레시피 (slots 포함)
- * - components/Button.tsx에서 { root, icon, spinner } = button(...) 형태로 사용
- */
 export const button = tv({
   slots: {
     root:
@@ -12,8 +8,8 @@ export const button = tv({
       // 상호작용/포커스
       "focus:outline-none focus-visible:ring-2 focus-visible:ring-brand " +
       "disabled:opacity-50 disabled:cursor-not-allowed " +
-      // 전환
-      "transition-colors duration-200",
+      // 전환(색/변형/그림자 등 UI 효과만)
+      "transition duration-200",
     icon: "mr-2 inline-flex",
     spinner:
       "absolute inset-0 grid place-items-center " +
@@ -25,22 +21,22 @@ export const button = tv({
     intent: {
       primary: {
         root:
-          "bg-brand text-white hover:bg-brand-hover shadow-discord " +
+          "bg-brand text-white hover:bg-brand-hover shadow-discord active:scale-[0.98] " +
           "dark:bg-brand dark:hover:bg-brand-hover",
       },
       secondary: {
         root:
-          "bg-surface-light-300 text-text-light hover:bg-surface-light-400 " +
-          "dark:bg-surface-dark-300 dark:hover:bg-surface-dark-200 dark:text-primary",
+          "bg-surface-light-300 text-text-light hover:bg-surface-light-400 active:scale-[0.98] " +
+          "dark:bg-surface-dark-300 dark:hover:bg-surface-dark-200 dark:text-white",
       },
       ghost: {
         root:
           "bg-transparent text-text-light hover:bg-surface-light-300 " +
-          "dark:text-primary dark:hover:bg-surface-dark-300",
+          "dark:text-white dark:hover:bg-surface-dark-300",
       },
       danger: {
         root:
-          "bg-status-danger text-white hover:bg-red-600 focus-visible:ring-red-500",
+          "bg-status-danger text-white hover:bg-red-600 focus-visible:ring-red-500 active:scale-[0.98]",
       },
     },
 
@@ -56,15 +52,25 @@ export const button = tv({
     },
 
     loading: {
-      true: { root: "relative text-transparent pointer-events-none" },
+      true: { root: "relative pointer-events-none" },
+      false: {},
+    },
+
+    iconOnly: {
+      true: { root: "aspect-square px-0" },
       false: {},
     },
   },
+
+  compoundVariants: [
+    { intent: "danger", class: { root: "focus-visible:ring-red-500" } },
+  ],
 
   defaultVariants: {
     intent: "primary",
     size: "md",
     block: false,
     loading: false,
+    iconOnly: false,
   },
 });
