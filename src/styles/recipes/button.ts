@@ -43,7 +43,7 @@ export const button = tv({
     size: {
       sm: { root: "h-8 px-3 text-sm" },
       md: { root: "h-10 px-4 text-base" },
-      lg: { root: "h-12 px-5 text-lg" },
+      lg: { root: "h-14 px-10 text-lg" },
     },
 
     block: {

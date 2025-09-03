@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Sidebar from '../components/layout/Sidebar';
-import { ShieldIcon, LockIcon, KeyIcon, CloudIcon, CheckIcon, DatabaseIcon, ServerIcon, FlashIcon } from '../components/Icons';
+import Sidebar from '../../components/layout/Sidebar';
+import { ShieldIcon, LockIcon, KeyIcon, CloudIcon, CheckIcon, DatabaseIcon, ServerIcon, FlashIcon } from '../../components/Icons';
 
 gsap.registerPlugin(ScrollTrigger);
 

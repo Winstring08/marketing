@@ -8,7 +8,7 @@ import LoadingSpinner from './components/ui/LoadingSpinner';
 import NotFound from './pages/NotFound';
 
 const Home = lazy(() => import('./pages/Home'));
-const Security = lazy(() => import('./pages/Security'));
+const Security = lazy(() => import('./pages/Security/Security'));
 const Product = lazy(() => import('./pages/Product'));
 const Download = lazy(() => import('./pages/Download'));
 // const NotFound = lazy(() => import('./pages/NotFound'));

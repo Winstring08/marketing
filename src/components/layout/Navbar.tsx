@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import { ShieldIcon, SunIcon, MoonIcon, MenuIcon, CloseIcon } from '../Icons';
 import { motion, AnimatePresence } from 'framer-motion';
+import { button } from '@/styles/recipes/button';
 
 const Navbar: React.FC = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -72,7 +73,7 @@ const Navbar: React.FC = () => {
 
             <Link
               to="/download"
-              className="hidden md:flex btn-brand text-sm"
+              className={button({intent:"primary"}).root()}
             >
               시작하기
             </Link>
@@ -118,7 +119,7 @@ const Navbar: React.FC = () => {
               <Link
                 to="/download"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block btn-brand text-center mt-4"
+                className={button({intent:"primary", block:true}).root()}
               >
                 시작하기
               </Link>

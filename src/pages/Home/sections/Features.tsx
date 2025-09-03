@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { motion, type Variants } from "framer-motion";
 import { KeyIcon, DeviceIcon, ShareIcon } from "../../../components/Icons";
+import { card } from "@/styles/recipes/card";
 
 type Feature = { icon: React.ReactNode; title: string; description: string; badge: string };
 
@@ -29,7 +30,6 @@ const featureItem: Variants = {
 };
 
 const Features: React.FC = () => {
-  // 렌더마다 새 객체/노드 생성 방지
   const features: Feature[] = useMemo(
     () => [
       { icon: <KeyIcon size={24} />,    title: "원터치 로그인",  description: "단 하나의 마스터 키로 모든 계정에 접근", badge: "SECURE" },
@@ -40,12 +40,16 @@ const Features: React.FC = () => {
   );
 
   return (
-    <section className="features-section py-20 bg-surface-light-100 dark:bg-surface-dark-600">
+    <section className="features-section min-h-screen flex items-center bg-surface-light-100 dark:bg-surface-dark-600">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-text-light dark:text-white">핵심 기능</h2>
-            <p className="text-text-light dark:text-text-secondary">기업의 보안을 위한 필수 기능들</p>
+            <h2 className="hero-text text-6xl lg:text-7xl font-black text-text-light dark:text-white leading-tight transform-gpu mt-8">
+              핵심 기능
+            </h2>
+            <p className="hero-text text-xl text-text-light dark:text-text-secondary max-w-3xl mx-auto leading-relaxed transform-gpu mt-6">
+              기업의 보안을 위한 필수 기능들
+            </p>
           </div>
 
           <motion.div
@@ -59,9 +63,13 @@ const Features: React.FC = () => {
               <motion.div
                 key={index}
                 variants={featureItem}
-                className="feature-card will-change-transform"
+                // transform은 FM만 담당 (CSS transition-transform 금지)
+                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ type: "tween", duration: 0.2 }}
+                className="feature-card will-change-transform transform-gpu"
               >
-                <div className="card-discord p-6 h-full transform-gpu hover:-translate-y-1 transition-transform duration-200">
+                {/* 카드 레시피: subtle 톤(회색 계열, 그림자 온화), 텍스트 왼쪽 정렬 */}
+                <div className={card({ tone: "default", padding: "md", align: "left" }).root()}>
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-12 h-12 bg-brand/10 dark:bg-brand/20 rounded-lg flex items-center justify-center">
                       <div className="text-brand">{feature.icon}</div>
@@ -70,7 +78,10 @@ const Features: React.FC = () => {
                       {feature.badge}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-text-light dark:text-white">{feature.title}</h3>
+
+                  <h3 className="text-lg font-bold mb-2 text-text-light dark:text-white">
+                    {feature.title}
+                  </h3>
                   <p className="text-sm text-text-light dark:text-text-secondary leading-relaxed">
                     {feature.description}
                   </p>

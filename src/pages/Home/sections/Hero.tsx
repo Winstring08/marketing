@@ -3,6 +3,7 @@ import { motion, type Variants } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SparklesIcon, RocketIcon, ShieldIcon } from "../../../components/Icons";
 import SecurityPolygonScene from "../components/SecurityPolygon";
+import { button } from "@/styles/recipes/button";
 
 // 부모는 순서만 조절
 const heroParent: Variants = {
@@ -46,7 +47,7 @@ const Hero: React.FC = () => {
         >
           <motion.div variants={heroItem} className="inline-flex items-center space-x-2 px-4 py-2 bg-brand/10 dark:bg-brand/20 rounded-full border border-brand/20 dark:border-brand/30 transform-gpu">
             <SparklesIcon size={16} className="text-brand" />
-            <span className="text-xs font-bold uppercase tracking-wider text-brand">Enterprise Security</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-brand">Password Manager</span>
           </motion.div>
 
           <motion.h1 variants={heroItem} className="hero-text text-6xl lg:text-7xl font-black text-text-light dark:text-white leading-tight transform-gpu mt-8">
@@ -59,10 +60,10 @@ const Hero: React.FC = () => {
           </motion.p>
 
           <motion.div variants={heroItem} className="hero-text flex flex-col sm:flex-row gap-4 justify-center pt-6 transform-gpu">
-            <Link to="/download" className="btn-brand inline-flex items-center justify-center px-8 py-4 text-lg">
+            <Link to="/download" className={button({intent:"primary", size:"lg"}).root()}>
               <RocketIcon size={20} className="mr-2" /> 무료로 시작하기
             </Link>
-            <Link to="/security" className="btn-secondary inline-flex items-center justify-center px-8 py-4 text-lg">
+            <Link to="/security" className={button({intent:"secondary", size:"lg"}).root()}>
               <ShieldIcon size={20} className="mr-2" /> 보안 기능 살펴보기
             </Link>
           </motion.div>
