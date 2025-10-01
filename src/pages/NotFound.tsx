@@ -66,33 +66,6 @@ const NotFound: React.FC = () => {
                 홈으로 돌아가기
                 <ArrowRightIcon size={20} className="ml-2" />
               </Link>
-              
-              <Link
-                to="/product"
-                className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 border border-gray-200 dark:border-gray-700"
-              >
-                제품 둘러보기
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-16 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-            <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
-              자주 찾는 페이지
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link to="/security" className="text-sm text-blue-500 dark:text-blue-400 hover:underline">
-                보안 기술
-              </Link>
-              <Link to="/product" className="text-sm text-blue-500 dark:text-blue-400 hover:underline">
-                제품 기능
-              </Link>
-              <Link to="/download" className="text-sm text-blue-500 dark:text-blue-400 hover:underline">
-                다운로드
-              </Link>
-              <Link to="/" className="text-sm text-blue-500 dark:text-blue-400 hover:underline">
-                홈페이지
-              </Link>
             </div>
           </div>
         </div>

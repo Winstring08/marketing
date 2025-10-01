@@ -1,3 +1,5 @@
+import { tv } from "tailwind-variants";
+
 export const card = tv({
   slots: {
     root: "rounded-lg duration-200 transition-colors transition-shadow",

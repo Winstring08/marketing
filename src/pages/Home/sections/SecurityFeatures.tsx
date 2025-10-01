@@ -65,19 +65,19 @@ const SecurityFeatures: React.FC = () => {
 
               <motion.h2
                 variants={leftItem}
-                className="text-3xl font-bold text-text-light dark:text-white"
+                className="text-3xl font-bold mt-8 text-text-light dark:text-white"
               >
                 디지털 자산을<br />
-                완벽하게 보호합니다
+                완벽하게 보호
               </motion.h2>
 
-              <motion.p
+              {/* <motion.p
                 variants={leftItem}
                 className="text-text-light dark:text-text-secondary leading-relaxed"
               >
                 최첨단 암호화 기술과 제로 트러스트 아키텍처로
                 어떤 위협으로부터도 안전합니다.
-              </motion.p>
+              </motion.p> */}
 
               {[
                 { icon: <LockIcon size={16} />, text: "End-to-End 암호화로 완벽한 데이터 보호" },

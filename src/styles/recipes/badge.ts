@@ -1,51 +1,39 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
-/**
- * Badge 스타일 레시피 (slots 포함)
- * - components/Badge.tsx에서 { root, dot } = badge(...) 형태로 사용
- */
 export const badge = tv({
   slots: {
+    // 기존 CTA의 원형 배지 스타일을 그대로 캡쳐
     root:
-      "inline-flex items-center rounded-discord font-medium " +
-      "px-2 py-[2px] text-xxs uppercase tracking-wide",
-    dot: "w-1.5 h-1.5 rounded-full mr-1.5",
+      "inline-flex items-center justify-center will-change-transform " +
+      "w-16 h-16 rounded-full mb-6 border-2 " +
+      "bg-brand/10 dark:bg-brand/20 border-brand/20 dark:border-brand/30",
+    // svg baseline 영향 제거 + 색상
+    icon: "block text-brand",
   },
 
   variants: {
-    tone: {
-      neutral: {
-        root:
-          "bg-surface-light-300 text-text-light " +
-          "dark:bg-surface-dark-300 dark:text-primary",
-        dot: "bg-text-light dark:bg-primary",
-      },
-      info: {
-        root: "bg-brand/15 text-brand dark:bg-brand/20 dark:text-primary",
-        dot: "bg-brand",
-      },
-      success: {
-        root: "bg-status-success/15 text-status-success",
-        dot: "bg-status-success",
-      },
-      warning: {
-        root: "bg-status-warning/20 text-status-warning",
-        dot: "bg-status-warning",
-      },
-      danger: {
-        root: "bg-status-danger/15 text-status-danger",
-        dot: "bg-status-danger",
-      },
+    // 필요 시 사이즈 조절
+    size: {
+      sm: { root: "w-10 h-10 p-1.5", icon: "w-5 h-5" },   // 20px
+      md: { root: "w-14 h-14 p-2.5", icon: "w-7 h-7" },   // 28px
+      lg: { root: "w-16 h-16 p-3",   icon: "w-8 h-8" },   // 32px
+      xl: { root: "w-24 h-24 p-4",   icon: "w-14 h-14" }, // 56px  ← 여기 키움
     },
-
-    outlined: {
-      true: { root: "border border-current bg-transparent" },
-      false: {},
+    // 의도별(색/배경은 현재 동일, 아이콘만 다르게 씀)
+    intent: {
+      crown: {},
+      download: {},
+      key: {},
+      shield: {},
     },
   },
 
   defaultVariants: {
-    tone: "neutral",
-    outlined: false,
+    size: "lg",
+    intent: "crown",
   },
 });
+
+export type BadgeVariants = VariantProps<typeof badge>;
+export type BadgeSize = NonNullable<BadgeVariants["size"]>;
+export type BadgeIntent = NonNullable<BadgeVariants["intent"]>;

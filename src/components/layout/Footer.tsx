@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <span className="text-lg font-bold text-text-light dark:text-white">Compass</span>
             </div>
             <p className="text-sm text-text-light dark:text-text-secondary leading-relaxed">
-              엔터프라이즈급 보안 솔루션으로 안전한 디지털 환경을 구축하세요.
+              엔터프라이즈급 보안 솔루션으로 안전한 디지털 환경 구축
             </p>
             <div className="flex space-x-2">
               <button className="p-2 rounded-discord bg-surface-light-300 dark:bg-surface-dark-100 hover:bg-brand/10 dark:hover:bg-brand/20 transition-colors">

@@ -6,7 +6,8 @@ import {
   WindowsIcon, AppleIcon, LinuxIcon, AndroidIcon,
   ShieldIcon, DatabaseIcon, RocketIcon, CrownIcon,
   FlashIcon
-} from '../components/Icons';
+} from '../../components/Icons';
+import { button } from '@/styles/recipes/button';
 
 interface Platform {
   name: string;
@@ -126,12 +127,10 @@ const Download: React.FC = () => {
             <p className="text-xl text-text-light dark:text-text-secondary max-w-3xl mx-auto leading-relaxed">
               모든 플랫폼에서 Compass를 경험하세요
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/download" className="btn-brand inline-flex items-center justify-center px-8 py-4 text-lg my-6">
+            <Link to="/download" className={button({ intent: "primary", size: "lg" }).root()}>
                 <WindowsIcon size={32} className="mr-2" />
                 Windows용 다운로드
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

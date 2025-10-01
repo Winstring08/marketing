@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Sidebar from '../components/layout/Sidebar';
+import Sidebar from '../../components/layout/Sidebar';
 import { 
   KeyIcon, DeviceIcon, ShareIcon, CheckIcon, RocketIcon, 
   WindowsIcon, AppleIcon, LinuxIcon, AndroidIcon, CloudIcon,
   LockIcon, ShieldIcon, DatabaseIcon, FlashIcon
-} from '../components/Icons';
+} from '../../components/Icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,7 +125,7 @@ const Product: React.FC = () => {
       {/* Hero Section */}
       <section className="product-hero py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10" />
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center">
             <motion.div
