@@ -7,8 +7,8 @@ export default defineConfig({
   plugins: [react()],
     resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // 👉 '@'를 src 경로로 지정
-      '~': path.resolve(__dirname, 'shared'), // 👉 '@'를 src 경로로 지정
+      '@': path.resolve(__dirname, 'src'), // '@'를 src 경로로 지정
+      '~': path.resolve(__dirname, 'shared'), // '~'를 shared 경로로 지정
     },
   },
 })

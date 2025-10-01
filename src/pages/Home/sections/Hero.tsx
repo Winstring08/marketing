@@ -32,20 +32,13 @@ const heroItem: Variants = {
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center">
 
+      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10"/>
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10" />
-        <SecurityPolygonScene />
+        <SecurityPolygonScene/>
       </div>
-  <div className="sticky top-0 bg-yellow-300 p-4">
-    나는 스크롤하다가 화면 상단에 붙는다
-  </div>
-  <div className="w-40 h-20 overflow-hidden bg-gray-200">
-  <p>
-    이 텍스트는 길어서 넘치지만, overflow-hidden 때문에 박스 밖은 잘려서 보이지 않음.
-  </p>
-</div>
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           className="max-w-7xl mx-auto text-center py-32 will-change-transform"
@@ -94,7 +87,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-      
+
     </section >
   );
 };
