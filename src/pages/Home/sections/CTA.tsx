@@ -35,7 +35,7 @@ const CTA: React.FC = () => {
               variants={{ hidden: {}, show: { transition: { when: "beforeChildren" } } }}
               className="text-center"
             >
-              <Badge intent="crown" size="xl" />
+              <Badge appearance="soft"/>
 
               {/* 타이틀은 고정 */}
               <h2 className="text-3xl font-bold mt-8 mb-4 text-text-light dark:text-white">

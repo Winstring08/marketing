@@ -24,7 +24,7 @@ const heroItem: Variants = {
     opacity: 1,
     transition: {
       duration: 1,
-      ease: [0.22, 1, 0.36, 1], // easeOutExpo
+      ease: [0.22, 1, 0.36, 1], // easeOutExpo 급격한 상승곡선
     },
   },
 };
@@ -35,7 +35,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex justify-center items-center text-center">
 
       {/* 배경 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10">
+      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand/5 dark:from-brand/10 dark:via-transparent dark:to-brand/10">
         <SecurityPolygonScene />
       </div>
 
@@ -48,15 +48,9 @@ const Hero = () => {
           viewport={{ once: true }}
         >
           {/* 배지 */}
-          <motion.div variants={heroItem} className="">
-            <span className="inline-flex items-center gap-badgeGap px-badgeX py-badgeY rounded-full border border-brand/20 dark:border-brand/30 bg-brand/10 dark:bg-brand/20">
-              <Badge
-                intent="crown"
-                size="ss"
-                interactive
-                className="mb-0 border-none bg-transparent dark:bg-transparent"
-                aria-hidden
-              />
+          <motion.div variants={heroItem}>
+            <span className="flex items-center gap-3 px-2 py-0.5 rounded-full border border-brand/20 bg-brand/10 dark:border-brand/30 dark:bg-brand/20">
+              <Badge intent="crown" size="ss" appearance="ghost" className="" />
               <span className="text-xs font-bold tracking-wider text-brand">
                 PASSWORD MANAGER
               </span>
