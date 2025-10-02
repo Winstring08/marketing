@@ -63,7 +63,7 @@ const SecurityPolygonScene: React.FC<SecurityPolygonSceneProps> = ({ className =
   useEffect(() => {
     if (containerRef.current) {
       gsap.to(containerRef.current, {
-        opacity: 1,
+        opacity: 0.2,
         duration: 1,
         ease: 'power2.out'
       });

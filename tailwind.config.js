@@ -50,6 +50,11 @@ export default {
       fontSize: {
         'xxs': '0.625rem',
       },
+      spacing: {
+        badgeX: '0.5rem', // px-2 대체
+        badgeY: '0.125rem', // py-0.5 대체
+        badgeGap: '0.75rem', // gap-3 대체
+      },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',

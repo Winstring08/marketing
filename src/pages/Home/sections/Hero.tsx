@@ -32,62 +32,72 @@ const heroItem: Variants = {
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex justify-center items-center text-center">
 
-      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10"/>
-      <div className="absolute inset-0 opacity-20">
-        <SecurityPolygonScene/>
+      {/* 배경 */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-brand-light/5 dark:from-brand/10 dark:to-brand-light/10">
+        <SecurityPolygonScene />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+        {/* 간격 조절용 div */}
         <motion.div
-          className="max-w-7xl mx-auto text-center py-32 will-change-transform"
+          className="relative flex flex-col items-center gap-10"
           variants={heroParent}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div variants={heroItem} className="flex justify-center">
-            <span className="inline-flex items-center gap-3 py-0.5 px-2 rounded-full border border-brand/20 dark:border-brand/30 bg-brand/10 dark:bg-brand/20">
-              {/* 원형 아이콘 배지: 칩 안쪽에 배치 */}
+          {/* 배지 */}
+          <motion.div variants={heroItem} className="">
+            <span className="inline-flex items-center gap-badgeGap px-badgeX py-badgeY rounded-full border border-brand/20 dark:border-brand/30 bg-brand/10 dark:bg-brand/20">
               <Badge
                 intent="crown"
                 size="ss"
                 interactive
-                className="mb-0 border-none bg-transparent dark:bg-transparent" // 칩 배경과 겹치지 않도록 배경/테두리 제거
+                className="mb-0 border-none bg-transparent dark:bg-transparent"
                 aria-hidden
               />
-              <span className="text-xs font-bold uppercase tracking-wider text-brand">
-                Password Manager
+              <span className="text-xs font-bold tracking-wider text-brand">
+                PASSWORD MANAGER
               </span>
             </span>
           </motion.div>
 
-          <motion.h1 variants={heroItem} className="hero-text text-6xl lg:text-7xl font-black text-text-light dark:text-white leading-tight transform-gpu mt-8">
-            비밀번호 관리의<br /><span className="gradient-text">새로운 표준</span>
+          {/* 내용 */}
+          <motion.h1
+            variants={heroItem}
+            className="text-6xl lg:text-7xl font-black leading-tight text-text-light dark:text-white"
+          >
+            비밀번호 관리의<br />
+            <span className="gradient-text">새로운 표준</span>
           </motion.h1>
 
-          <motion.div variants={heroItem} className="hero-text flex flex-col sm:flex-row gap-4 justify-center pt-6 transform-gpu">
+          {/* 버튼 */}
+          <motion.div
+            variants={heroItem}
+            className="flex flex-col sm:flex-row justify-center gap-4"
+          >
             <Button
               intent="primary"
               size="lg"
               onClick={() => navigate("/download")}
               leftIcon={<DownloadIcon />}
+              aria-label="다운로드 페이지로 이동"
             >
               무료로 시작하기
             </Button>
+
             <Button
               intent="secondary"
               size="lg"
               onClick={() => navigate("/product")}
               leftIcon={<KeyIcon />}
+              aria-label="제품 페이지로 이동"
             >
               제품 더 알아보기
             </Button>
           </motion.div>
         </motion.div>
-      </div>
-
     </section >
   );
 };
